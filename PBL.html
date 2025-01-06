@@ -1,0 +1,299 @@
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>openresty</center>
+</body>
+</html>
+Status read failed: Connection reset by peer at /usr/share/perl5/Net/HTTP/Methods.pm line 288.
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  
+<html>
+<head>
+        <title>
+        </title>
+        <meta http-equiv="refresh" content="0;url=http://www.IN.gov/core/index.html">
+</head>
+  
+<body>
+ 
+ 
+ 
+</body>
+</html>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+<title>Playbhagyalaxmi</title>
+
+<script language="javascript" type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<script language="javascript" type="text/javascript" src="js/datetimepicker.js"></script>
+
+<script type="text/javascript" src="js/getresult.js">
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+        $("#divResult").load("includes/request.php?reqType=get_result");
+
+        });
+
+
+
+function formatDate (input) {
+
+  var datePart = input.match(/\d+/g),
+
+  year = datePart[0], // get only two digits
+
+  month = datePart[1], day = datePart[2];
+
+
+
+  return day+'-'+month+'-'+year;
+
+}
+
+
+
+function get_res_bydate()
+
+{
+
+        if($("#startdate").val() =='')
+
+        {
+
+                alert('Please select start date!!');
+
+                return false;
+
+        }
+
+        else if($("#enddate").val() =='')
+
+        {
+
+                alert('Please select end date!!');
+
+                return false;
+
+        }
+
+        else
+
+        {
+
+        $("#divResult").show();
+
+        //$('#summary').html('<font style="font-size:16px; margin-left:10px; padding:5px;">Displayin Result From: '+$("#startdate").val()+' To: '+$("#enddate").val()+' </font>');
+
+        $('#divResult').html('<img src="img/ajax-loader.gif" id="loader" height="20px" width="124px" />');
+
+        //alert($("#startdate").val()+'  '+$("#enddate").val());
+
+        $("#divResult").load("includes/request.php?reqType=get_res_bydate&frmDate="+$("#startdate").val()+'&toDate='+$("#enddate").val());
+
+        }
+
+
+
+}
+
+
+
+</script>
+
+<style type="text/css">
+
+.resluttd
+
+{
+
+    
+
+    border-color: #FFF;
+
+    border-style: solid;
+
+    border-width: 0 1px 1px 1px !important;
+
+    color: #000000;
+
+    height: 35px;
+
+    padding: 5px 0 5px 12px;
+
+        font-size:16px;
+
+        background:#080100;
+
+        font-weight:bold;
+
+
+
+}
+
+th
+
+{
+
+ background: none repeat scroll 0 0 #AC1221;;
+
+ color:#FFFFFF;
+
+}
+
+body {
+
+        margin-top: 0px;
+
+        background-color: #EFF20C;
+
+
+
+}
+
+.style6 {font-family: Verdana; font-size: 17px; font-weight: bold; }
+
+.style12 {
+
+        font-family: Verdana;
+
+        font-size: 14px;
+
+        color: #000000;
+
+        font-weight: bold;
+
+}
+
+.style222 {font-family: Verdana; font-size: 12px; color: #FFFF00; } 
+
+
+
+.style22 {font-family: Verdana; font-size: 12px; color: #FFFFFF; } 
+
+
+
+.style15 {
+
+        font-family: "Franklin Gothic Medium", "Franklin Gothic Demi Cond";
+
+        font-size: 60px;
+
+        color: #FFFFFF;
+
+        font-style: italic;
+
+}
+
+.style19 {font-size: 16px}
+
+.style23 {
+
+        font-size: 40px;
+
+        color: #FF5b33;
+
+}
+
+.style17 {      font-size: 16px;
+
+        color: #FF5B33;
+
+}
+
+.style24 {color: #00D244}
+
+.style25 {color: #FFFFFF}
+
+.style26 {color: #00B444}
+
+.style27 {color: #9CFA0C}
+
+.ajaxclass
+
+{
+
+ padding-left:250px;
+
+ padding-top:100px;
+
+}
+
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+
+
+
+<body >
+
+<table width="1000"><tr><td>
+
+<div style="float:left;width:400px"></div>
+
+<div align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:20px;font-weight:bold;color:#000000;text-align:center">Show Result</span></div>
+
+</td></tr>
+
+<tr><td>
+
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+
+      <tr>
+
+        <td height="90" align="center" valign="middle" ><span class="style12">
+
+        <table><tr><td>
+
+ Start Date :</td><td>
+
+     <input type="Text" id="startdate" maxlength="25" size="25"></td><td>
+
+     <a href="javascript:NewCal('startdate','ddmmmyyyy')"><img src="img/cal.gif" width="16" height="16" border="0" ></a></td><td>
+
+        End Date :</td><td>
+
+        <input type="Text" id="enddate" maxlength="25" size="25"></td>
+
+        <td><a href="javascript:NewCal('enddate','ddmmmyyyy')"><img src="img/cal.gif" width="16" height="16" border="0"></a></td>
+
+    <td><input type="image" name"btn_go" value="Go" onClick="get_res_bydate()" src="img/go.gif"></td>
+
+</tr></table></span></td>
+
+      </tr>
+
+<tr><td id="summary" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#000000;text-align:center">Result Of Date Sun Dec 10 2023</td></tr>
+
+<tr>
+
+<td>
+
+<div id="divResult" style="margin-top:30px">
+
+
+
+</div>
+
+</td>
+
+</tr>
+
+    </table>
+
+</td></tr></table>
+
+</body>
+
+</html>
